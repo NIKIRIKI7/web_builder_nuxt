@@ -2,7 +2,14 @@
 export default defineNuxtConfig({
     compatibilityDate: '2025-07-15',
     devtools: { enabled: true },
-    modules: ['@nuxt/eslint', '@nuxt/devtools', '@nuxt/image', '@nuxt/icon', '@nuxt/fonts'],
+    modules: [
+      '@nuxt/eslint',
+      '@nuxt/devtools',
+      '@nuxt/image',
+      '@nuxt/icon',
+      '@nuxt/fonts',
+      '@nuxtjs/tailwindcss',
+    ],
 
     eslint: {
         config: {
