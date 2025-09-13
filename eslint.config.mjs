@@ -1,0 +1,295 @@
+// @ts-check
+import withNuxt from './.nuxt/eslint.config.mjs'
+import process from "eslint-plugin-nuxt/lib/configs/base.js";
+
+export default withNuxt(
+    {
+        files: ['**/*.ts', '**/*.js', '**/*.vue'],
+        rules: {
+            // Основные правила
+            'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+            'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+            'semi': 'error',
+            'prefer-const': 'error',
+            'no-unused-vars': 'error',
+            'no-unused-expressions': 'error',
+            'eqeqeq': ['error', 'always'],
+            'curly': ['error', 'all'],
+            'no-var': 'error',
+            'object-shorthand': 'error',
+            'prefer-arrow-callback': 'error',
+            'prefer-template': 'error',
+            'no-extra-bind': 'error',
+            'no-implicit-coercion': 'error',
+            'no-useless-return': 'error',
+            'no-duplicate-imports': 'error',
+            'no-else-return': 'error',
+            'dot-notation': 'error',
+            'quote-props': ['error', 'as-needed'],
+            'indent': ['error', 4],
+            'quotes': ['error', 'single'],
+            'comma-dangle': ['error', 'always-multiline'],
+            'object-curly-spacing': ['error', 'always'],
+            'array-bracket-spacing': ['error', 'never'],
+            'no-await-in-loop': 'error',
+            'no-promise-executor-return': 'error',
+            'no-eval': 'error',
+            'no-implied-eval': 'error',
+
+            // Жесткие правила в стиле Airbnb
+            'no-param-reassign': 'error',
+            'prefer-destructuring': ['error', {
+                'array': false,
+                'object': true
+            }],
+            'no-restricted-syntax': [
+                'error',
+                'WithStatement',
+                'LabeledStatement',
+                'SequenceExpression',
+                {
+                    selector: 'ForInStatement',
+                    message: 'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries} and iterate over the resulting array.',
+                },
+            ],
+            'no-underscore-dangle': 'error',
+            'no-plusplus': ['error', { 'allowForLoopAfterthoughts': true }],
+            'radix': 'error',
+            'camelcase': ['error', {
+                'properties': 'always',
+                'ignoreDestructuring': false
+            }],
+            'max-depth': ['error', 4],
+            'max-params': ['error', 4],
+            'complexity': ['error', 10],
+            'max-lines': ['error', {
+                'max': 300,
+                'skipBlankLines': true,
+                'skipComments': true
+            }],
+            'max-lines-per-function': ['error', {
+                'max': 50,
+                'skipBlankLines': true,
+                'skipComments': true
+            }],
+            'no-nested-ternary': 'error',
+            'no-magic-numbers': ['error', {
+                'ignore': [-1, 0, 1, 2],
+                'ignoreArrayIndexes': true
+            }],
+            'prefer-promise-reject-errors': 'error',
+            'require-atomic-updates': 'error',
+            'no-constructor-return': 'error',
+            'no-dupe-else-if': 'error',
+            'no-implicit-globals': 'error',
+            'prefer-regex-literals': 'error',
+            'no-useless-concat': 'error',
+            'no-lonely-if': 'error',
+            'no-restricted-properties': [
+                'error',
+                {
+                    'property': 'forEach',
+                    'message': 'Используйте for...of вместо forEach'
+                }
+            ],
+            'no-multi-spaces': 'error',
+            'no-iterator': 'error',
+            'no-prototype-builtins': 'error',
+            'no-continue': 'error',
+            'no-bitwise': 'error',
+            'consistent-return': 'error',
+            'one-var': ['error', 'never'],
+            'no-mixed-operators': 'error',
+            'no-new': 'error',
+            'func-names': ['error', 'as-needed'],
+            'prefer-rest-params': 'error',
+            'no-redeclare': 'error',
+            'padding-line-between-statements': [
+                'error',
+                { blankLine: 'always', prev: '*', next: 'return' },
+                { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
+                { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] },
+                { blankLine: 'always', prev: 'directive', next: '*' },
+                { blankLine: 'any', prev: 'directive', next: 'directive' },
+                { blankLine: 'always', prev: 'block-like', next: '*' },
+            ],
+            'no-path-concat': 'error',
+            'no-restricted-modules': ['error', 'foo-module'],
+            'no-useless-call': 'error',
+            'no-script-url': 'error',
+            'no-sequences': 'error',
+            'no-throw-literal': 'error',
+            'no-unmodified-loop-condition': 'error',
+            'no-useless-catch': 'error',
+            'no-void': 'error',
+            'no-with': 'error',
+            'prefer-named-capture-group': 'error',
+            'prefer-object-has-own': 'error',
+            'require-unicode-regexp': 'error',
+
+            'no-restricted-globals': [
+                'error',
+                'event',
+                'name',
+                'length',
+                'closed',
+                'outerHeight',
+                'status'
+            ],
+            'no-label-var': 'error',
+            'no-shadow': 'error',
+            'no-undef-init': 'error',
+            'no-use-before-define': ['error', {
+                'functions': false,
+                'classes': true,
+                'variables': true
+            }],
+            'no-multi-assign': 'error',
+            'no-array-constructor': 'error',
+            'no-new-object': 'error',
+            'func-style': ['error', 'expression'],
+            'no-return-assign': 'error',
+            'no-useless-computed-key': 'error',
+            'no-useless-rename': 'error',
+            'no-whitespace-before-property': 'error',
+            'operator-assignment': ['error', 'always'],
+            'prefer-exponentiation-operator': 'error',
+            'prefer-object-spread': 'error',
+            'symbol-description': 'error',
+            'template-curly-spacing': ['error', 'never'],
+            'yoda': ['error', 'never'],
+
+            'require-await': 'error',
+            'no-return-await': 'error',
+
+            'class-methods-use-this': 'error',
+            'no-dupe-class-members': 'error',
+
+            'import/first': 'error',
+            'import/newline-after-import': 'error',
+            'import/no-duplicates': 'error',
+            'import/order': ['error', {
+                groups: [
+                    'builtin',
+                    'external',
+                    'internal',
+                    'parent',
+                    'sibling',
+                    'index'
+                ],
+                'newlines-between': 'always',
+                alphabetize: {
+                    order: 'asc',
+                    caseInsensitive: true
+                }
+            }],
+            'import/no-absolute-path': 'error',
+            'import/no-self-import': 'error',
+            'import/no-cycle': 'error',
+            'import/no-useless-path-segments': 'error',
+            'import/export': 'error',
+            'import/no-mutable-exports': 'error',
+            'import/no-unused-modules': 'error',
+
+            'vue/block-order': ['error', {
+                order: ['script', 'template', 'style']
+            }],
+            'vue/no-restricted-v-bind': ['error', '/^v-/'],
+            'vue/no-useless-mustaches': 'error',
+            'vue/no-useless-v-bind': 'error',
+            'vue/padding-line-between-blocks': 'error',
+            'vue/prefer-define-options': 'error',
+            'vue/prefer-prop-type-boolean-first': 'error',
+            'vue/component-name-in-template-casing': ['error', 'PascalCase'],
+            'vue/attributes-order': ['error', {
+                order: [
+                    'DEFINITION',
+                    'LIST_RENDERING',
+                    'CONDITIONALS',
+                    'RENDER_MODIFIERS',
+                    'GLOBAL',
+                    'UNIQUE',
+                    'TWO_WAY_BINDING',
+                    'OTHER_DIRECTIVES',
+                    'OTHER_ATTR',
+                    'EVENTS',
+                    'CONTENT'
+                ]
+            }],
+            'vue/order-in-components': ['error', {
+                order: [
+                    'el',
+                    'name',
+                    'key',
+                    'parent',
+                    'functional',
+                    ['delimiters', 'comments'],
+                    ['components', 'directives', 'filters'],
+                    'extends',
+                    'mixins',
+                    ['provide', 'inject'],
+                    'ROUTER_GUARDS',
+                    'layout',
+                    'middleware',
+                    'validate',
+                    'scrollToTop',
+                    'transition',
+                    'loading',
+                    'inheritAttrs',
+                    'model',
+                    ['props', 'propsData'],
+                    'emits',
+                    'setup',
+                    'asyncData',
+                    'data',
+                    'fetch',
+                    'head',
+                    'computed',
+                    'watch',
+                    'watchQuery',
+                    'LIFECYCLE_HOOKS',
+                    'methods',
+                    ['template', 'render'],
+                    'renderError'
+                ]
+            }],
+            'vue/require-default-prop': 'error',
+            'vue/require-explicit-emits': 'error',
+            'vue/no-boolean-default': 'error',
+            'vue/no-unused-properties': 'error',
+            'vue/component-api-style': ['error', ['script-setup']],
+            'vue/html-button-has-type': 'error',
+            'vue/html-comment-content-spacing': 'error',
+            'vue/no-static-inline-styles': 'error',
+            'vue/no-undef-properties': 'error',
+            'vue/no-unused-refs': 'error',
+            'vue/prefer-separate-static-class': 'error',
+            'vue/prefer-true-attribute-shorthand': 'error',
+            'vue/no-reserved-component-names': 'error',
+            'vue/no-template-target-blank': 'error',
+            'vue/no-unused-components': 'error',
+            'vue/multi-word-component-names': 'error',
+            'vue/no-mutating-props': 'error',
+            'vue/no-v-text-v-html-on-component': 'error',
+            'vue/prefer-import-from-vue': 'error',
+            'vue/require-prop-types': 'error',
+            'vue/v-on-event-hyphenation': ['error', 'always'],
+            'vue/valid-define-emits': 'error',
+            'vue/valid-define-props': 'error',
+            'vue/valid-next-tick': 'error',
+        },
+    },
+    {
+        files: ['nuxt.config.ts'],
+        rules: {
+            '@typescript-eslint/prefer-optional-chain': 'off',
+            '@typescript-eslint/prefer-nullish-coalescing': 'off',
+            '@typescript-eslint/no-explicit-any': 'off',
+            '@typescript-eslint/explicit-function-return-type': 'off',
+            'no-console': 'off',
+            'import/no-default-export': 'off',
+            'import/order': 'off',
+            'import/newline-after-import': 'off'
+        }
+    }
+)
