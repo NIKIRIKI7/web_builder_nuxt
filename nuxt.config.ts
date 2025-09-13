@@ -9,6 +9,7 @@ export default defineNuxtConfig({
       '@nuxt/icon',
       '@nuxt/fonts',
       '@nuxtjs/tailwindcss',
+      '@nuxtjs/i18n',
     ],
 
     eslint: {
@@ -51,4 +52,12 @@ export default defineNuxtConfig({
             },
         ],
     },
+
+    i18n: {
+        locales: [
+            { code: 'en', language: 'en-US' },
+            { code: 'ru', language: 'ru-RU' }
+        ],
+        defaultLocale: 'ru',
+    }
 });
