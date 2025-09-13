@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
     compatibilityDate: '2025-07-15',
     devtools: { enabled: true },
-    modules: ['@nuxt/eslint', '@nuxt/devtools', '@nuxt/image', '@nuxt/icon'],
+    modules: ['@nuxt/eslint', '@nuxt/devtools', '@nuxt/image', '@nuxt/icon', '@nuxt/fonts'],
 
     eslint: {
         config: {
@@ -43,15 +43,5 @@ export default defineNuxtConfig({
                 dir: './assets/icons',
             },
         ],
-
-        // Добавляем часто используемые иконки прямо в бандл, чтобы не было лишних запросов
-        clientBundle: {
-            scan: true,
-            // Добавляем иконки, которые сканер может не найти (если имя динамическое)
-            icons: [
-                '...'
-            ],
-            includeCustomCollections: true,
-        },
     },
 });
