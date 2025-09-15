@@ -2,14 +2,15 @@
 export default defineNuxtConfig({
     compatibilityDate: '2025-07-15',
     devtools: { enabled: true },
+    css: ['~/assets/css/main.css'],
     modules: [
-      '@nuxt/eslint',
-      '@nuxt/devtools',
-      '@nuxt/image',
-      '@nuxt/icon',
-      '@nuxt/fonts',
-      '@nuxtjs/tailwindcss',
-      '@nuxtjs/i18n',
+        '@nuxt/eslint',
+        '@nuxt/devtools',
+        '@nuxt/image',
+        '@nuxt/icon',
+        '@nuxt/fonts',
+        '@nuxtjs/i18n',
+        '@nuxt/ui',
     ],
 
     eslint: {
@@ -44,6 +45,13 @@ export default defineNuxtConfig({
     icon: {
         mode: 'css',
         componentName: 'Icon',
+        size: '1.5rem',
+        class: 'app-icon',
+
+        aliases: {
+            'github': 'mdi:github',
+            'arrow-left': 'heroicons:arrow-left-solid',
+        },
 
         customCollections: [
             {
